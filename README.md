@@ -14,12 +14,12 @@ Every impairment the channel adds is removed by one receiver block, and each blo
 | Channel impairment | Receiver block | Result | Status |
 |---|---|---|---|
 | Noise (AWGN) | Matched filter, genie timing | BER on the theory curve | ✅ |
-| Timing offset, sample-rate drift | Gardner timing recovery | Eye re-opened, drift tracked | ⬜ W03 |
-| Carrier frequency offset | Coarse FFT estimate + Costas loop | Constellation de-rotated | ⬜ W04 |
-| Unknown burst start | Zadoff-Chu preamble + correlator | Frame located | ⬜ W05 |
-| Multipath (ISI) | LMS and blind CMA equalisers | ISI removed | ⬜ W06 |
-| Frequency-selective channel | OFDM: CP sync, pilot channel estimation | EVM per subcarrier | ⬜ W07 |
-| — | FMCW radar: range-Doppler, CA-CFAR, angle FFT | Targets detected | ⬜ W08 |
+| Timing offset, sample-rate drift | Gardner timing recovery | Eye re-opened, drift tracked | ⬜ Pt.03 |
+| Carrier frequency offset | Coarse FFT estimate + Costas loop | Constellation de-rotated | ⬜ Pt.04 |
+| Unknown burst start | Zadoff-Chu preamble + correlator | Frame located | ⬜ Pt.05 |
+| Multipath (ISI) | LMS and blind CMA equalisers | ISI removed | ⬜ Pt.06 |
+| Frequency-selective channel | OFDM: CP sync, pilot channel estimation | EVM per subcarrier | ⬜ Pt.07 |
+| — | FMCW radar: range-Doppler, CA-CFAR, angle FFT | Targets detected | ⬜ Pt.08 |
 
 ## Results
 
@@ -29,9 +29,9 @@ Every impairment the channel adds is removed by one receiver block, and each blo
 
 With ideal synchronisation the simulated BER sits on the theoretical curves for QPSK, 16-QAM and 64-QAM. This is the reference: each later block is judged by how closely it brings an impaired signal back to this curve.
 
-<!-- W05: BER with all impairments on vs theory, and the implementation loss in dB -->
-<!-- W07: OFDM EVM per subcarrier on a multipath channel -->
-<!-- W08: range-Doppler map with CFAR detections -->
+<!-- Pt.05: BER with all impairments on vs theory, and the implementation loss in dB -->
+<!-- Pt.07: OFDM EVM per subcarrier on a multipath channel -->
+<!-- Pt.08: range-Doppler map with CFAR detections -->
 
 ## Architecture
 
@@ -58,7 +58,7 @@ result = rx.process(iq, n_symbols=1000)   # result.bits, result.symbols, result.
 
 ## Receiver specification
 
-[`docs/receiver_spec.md`](docs/receiver_spec.md) states the receiver's requirements (sensitivity, EVM, BER, offset ranges). They are verified automatically in Project 3, [rf-test-bench](https://github.com/sohui-lee-HH/rf-test-bench). <!-- link once it exists -->
+[`docs/receiver_spec.md`](docs/receiver_spec.md) states the receiver's requirements (sensitivity, EVM, BER, offset ranges). They are verified automatically in Project 3, [rf-test-bench](https://github.com/sohui-lee-HH/rf-test-bench). 
 
 ## Quickstart
 
