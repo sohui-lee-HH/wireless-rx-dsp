@@ -9,7 +9,9 @@
 
 ## What's inside
 
-Every impairment the channel adds is removed by one receiver block, and each block has a known-answer test.
+Every phone, Wi-Fi chip, 5G base station and car radar contains the same core problem: the received signal arrives with the wrong timing, the wrong frequency, an unknown start and echoes from the environment, and the receiver has to undo all of it before a single bit can be read. Libraries and SDR toolkits usually hide these steps. I wanted to build each one myself, so this repo implements the receiver block by block and checks every block against what theory says it should achieve.
+
+The same toolbox (FFTs, correlation, filtering) also runs an FMCW radar, which is why the project ends with range-Doppler processing. The receiver then becomes the device under test in my next project, an automated RF validation bench, which verifies it against the specification in `docs/receiver_spec.md`.
 
 | Channel impairment | Receiver block | Result | Status |
 |---|---|---|---|
