@@ -92,7 +92,7 @@ docs/            receiver spec, figures
 
 ## Related work
 
-Builds on [iqmodrec](https://github.com/sohui-lee-HH/ iq-modulation-classification), my CNN modulation classifier, and reuses its modulators.
+Builds on [iqmodrec](https://github.com/sohui-lee-HH/iq-modulation-classification), my CNN modulation classifier, and reuses its modulators.
 
 ## Design notes and limitations
 
